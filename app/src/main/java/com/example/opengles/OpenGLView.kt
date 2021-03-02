@@ -4,18 +4,18 @@ import android.content.Context
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
 
-class OpenGLView : GLSurfaceView {
-    constructor(context: Context) : super(context) {
-        init()
-    }
+class OpenGLView(context: Context) : GLSurfaceView(context) {
 
-    constructor(context: Context,attributeSet: AttributeSet) : super(context,attributeSet){
-        init()
-    }
+    private val renderer: OpenGLRenderer
 
-    private fun init() {
+    init {
+
+        // Create an OpenGL ES 2.0 context
         setEGLContextClientVersion(2)
-        preserveEGLContextOnPause = true
-        setRenderer(OpenGLRenderer())
+
+        renderer = OpenGLRenderer()
+
+        // Set the Renderer for drawing on the GLSurfaceView
+        setRenderer(renderer)
     }
 }

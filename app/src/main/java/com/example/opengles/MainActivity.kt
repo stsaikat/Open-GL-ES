@@ -5,22 +5,22 @@ import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var openGLView: OpenGLView
+    lateinit var glView: OpenGLView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        openGLView = findViewById(R.id.openglview)
+        glView = OpenGLView(this)
+        setContentView(glView)
     }
 
     override fun onResume() {
         super.onResume()
-        openGLView.onResume()
+        glView.onResume()
     }
 
     override fun onPause() {
         super.onPause()
-        openGLView.onPause()
+        glView.onPause()
     }
 
 }
