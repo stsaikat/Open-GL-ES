@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:background="@color/white">
 
-    <com.example.opengles.OpenGLView
+    <com.example.opengles.GLView
         android:layout_centerInParent="true"
         android:id="@+id/openglview"
         android:layout_width="400dp"

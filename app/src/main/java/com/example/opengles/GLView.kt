@@ -4,18 +4,17 @@ import android.content.Context
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
 import android.view.MotionEvent
-import android.view.View
 
-class OpenGLView(context: Context) : GLSurfaceView(context) {
+class GLView(context: Context) : GLSurfaceView(context) {
 
-    private val renderer: OpenGLRenderer
+    private val renderer: GLRenderer
 
     init {
 
         // Create an OpenGL ES 2.0 context
         setEGLContextClientVersion(2)
 
-        renderer = OpenGLRenderer()
+        renderer = GLRenderer(context)
 
         // Render the view only when there is a change in the drawing data.
         // To allow the triangle to rotate automatically, this line is commented out:

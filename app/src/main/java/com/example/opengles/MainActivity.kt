@@ -11,14 +11,12 @@ import org.xmlpull.v1.XmlPullParser
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var glView: OpenGLView
+    lateinit var glView: GLView
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //val parser: XmlPullParser = resources.getXml(R.layout.activity_main)
-        //val attributes: AttributeSet = Xml.asAttributeSet(parser)
-        glView = OpenGLView(this)
+        glView = GLView(this)
         setContentView(glView)
         glView.renderMode = GLSurfaceView.RENDERMODE_WHEN_DIRTY
     }
